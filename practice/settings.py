@@ -119,3 +119,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True))
+SECRET_KEY = os.environ.get('DHANGO_SECRET_KEY', 'cn-j02+nbp8*!fy)taibe*0#^p_z@(8c2%ih3=pr!cfkbw_50=')
