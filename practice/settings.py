@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddlware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -121,3 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True))
 SECRET_KEY = os.environ.get('DHANGO_SECRET_KEY', 'cn-j02+nbp8*!fy)taibe*0#^p_z@(8c2%ih3=pr!cfkbw_50=')
+
+import dj_datebase_url
+db_from_env = dj_datebase_url.config(conn_max_age=500)
+DATEBASE['default'].update(db_from_env)
